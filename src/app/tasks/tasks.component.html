@@ -1,0 +1,15 @@
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- Componente para adicionar novas tarefas. O evento onAddTask é tratado pelo método addTask no componente pai. -->
+
+<app-task-item *ngFor="let tarefa of tarefas" 
+  [tarefa]="tarefa" 
+  (onDeleteTask)="deleteTask($event)" 
+  (onToggleConcluido)="toggleConcluido($event)">
+</app-task-item>
+<!-- 
+  Componente que representa cada tarefa individual.
+  - *ngFor: Itera sobre a lista de tarefas (tarefas) e cria uma instância do componente para cada tarefa.
+  - [tarefa]: Passa a tarefa atual como input para o componente.
+  - (onDeleteTask): Captura o evento de deletar a tarefa e chama o método deleteTask no componente pai.
+  - (onToggleConcluido): Captura o evento de alternar o status de conclusão da tarefa e chama o método toggleConcluido no componente pai.
+-->

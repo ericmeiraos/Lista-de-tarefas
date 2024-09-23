@@ -1,0 +1,47 @@
+<!-- Condicional para mostrar o botão de fechar ou adicionar tarefa -->
+<div *ngIf="mostrarAddTarefa; else addButton">
+  <!-- Se 'mostrarAddTarefa' for verdadeiro, exibe o botão "Fechar" -->
+  <button mat-raised-button color="warn" (click)="AlteraVisualizacao(false)">
+    Fechar
+  </button>
+</div>
+
+<!-- Template que será exibido se 'mostrarAddTarefa' for falso -->
+<ng-template #addButton>
+  <!-- Se 'mostrarAddTarefa' for falso, exibe o botão "Adicionar Tarefa" -->
+  <button mat-raised-button color="primary" (click)="AlteraVisualizacao(true)">
+    Adicionar Tarefa
+  </button>
+</ng-template>
+
+<!-- Formulário de adição de tarefa, exibido apenas se 'mostrarAddTarefa' for verdadeiro -->
+<form (ngSubmit)="onSubmit()" *ngIf="mostrarAddTarefa" class="add-form">
+  
+  <!-- Campo para o texto da tarefa -->
+  <mat-form-field appearance="fill">
+    <mat-label>Tarefa</mat-label>
+    <!-- Bind bidirecional: o valor inserido pelo usuário será vinculado à variável 'tarefa' -->
+    <input matInput placeholder="Adicionar Tarefa" id="text" [(ngModel)]="tarefa" name="text">
+  </mat-form-field>
+
+  <!-- Campo para selecionar a categoria da tarefa -->
+  <mat-form-field appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <!-- Bind bidirecional: a categoria selecionada será vinculada à variável 'categoria' -->
+    <mat-select [(ngModel)]="categoria" name="categoria">
+      <!-- Opção inicial (padrão) sem valor -->
+      <mat-option value="">Selecione uma categoria</mat-option>
+      <!-- Opções de categorias disponíveis -->
+      <mat-option value="casa">Casa</mat-option>
+      <mat-option value="trabalho">Trabalho</mat-option>
+      <mat-option value="faculdade">Faculdade</mat-option>
+      <mat-option value="academia">Academia</mat-option>
+      <mat-option value="lazer">Lazer</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Botão para submeter o formulário -->
+  <button mat-raised-button color="accent" type="submit">
+    Salvar Tarefa
+  </button>
+</form>

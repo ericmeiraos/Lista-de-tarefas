@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"); /* Importa a fonte Poppins do Google Fonts */
+
+* {
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura total dos elementos */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Define a fonte padrão para o corpo da página */
+}
+
+.container {
+  max-width: 900px; /* Limita a largura máxima da container */
+  margin: 30px auto; /* Centraliza a container com margens verticais */
+  padding: 30px; /* Adiciona preenchimento interno */
+  border-radius: 5px; /* Arredonda os cantos da container */
+  background-color: #f9f9f9; /* Cor de fundo suave para a container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para um efeito de profundidade */
+}
+
+.btn {
+  display: inline-block; /* Exibe o botão como um bloco inline */
+  background: #3f51b5; /* Cor padrão do botão (azul) */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão */
+  padding: 10px 20px; /* Adiciona preenchimento interno */
+  margin: 5px; /* Espaçamento externo */
+  border-radius: 5px; /* Arredonda os cantos do botão */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-size: 15px; /* Define o tamanho da fonte do botão */
+}
+
+.btn:focus {
+  outline: none; /* Remove o contorno padrão ao focar no botão */
+}
+
+.btn:active {
+  transform: scale(0.98); /* Efeito de clique reduzindo o tamanho do botão */
+}
+
+.btn-block {
+  display: block; /* Faz o botão ocupar toda a largura disponível */
+  width: 100%; /* Define a largura do botão como 100% */
+}
+
+.add-form {
+  margin-bottom: 40px; /* Espaçamento abaixo do formulário de adição */
+}
+
+.form-control {
+  margin: 20px 0; /* Espaçamento vertical entre os controles do formulário */
+}
+
+.form-control label {
+  display: block; /* Faz o rótulo ocupar a linha inteira */
+}
+
+.form-control input {
+  width: 100%; /* Faz o campo de entrada ocupar toda a largura disponível */
+  height: 40px; /* Altura do campo de entrada */
+  margin: 5px; /* Espaçamento em torno do campo */
+  padding: 3px 7px; /* Preenchimento interno do campo */
+  font-size: 17px; /* Tamanho da fonte do campo */
+}
+
+.form-control-check {
+  display: flex; /* Utiliza flexbox para alinhar itens */
+  align-items: center; /* Centraliza verticalmente os itens */
+  justify-content: space-between; /* Espaça os itens uniformemente */
+}
+
+.form-control-check label {
+  flex: 1; /* Permite que o rótulo ocupe o espaço disponível */
+}
+
+.form-control-check input {
+  flex: 2; /* O campo de entrada ocupa o dobro do espaço do rótulo */
+  height: 20px; /* Altura do campo de entrada para checkbox/radio */
+}
+
+/* Remover regras que não estão sendo utilizadas ou que são sobrepostas */
